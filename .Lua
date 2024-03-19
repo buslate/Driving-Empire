@@ -114,7 +114,7 @@ local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "AntiAFK", Default = fal
     Toggle:OnChanged(function(Value)
         _G.antiAFK = Value
 
-        while _G.antiAFK do wait(600)
+        while _G.antiAFK do wait(20)
     
         game:GetService'VirtualUser':Button1Down(Vector2.new(788, 547))
         
