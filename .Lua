@@ -105,6 +105,68 @@ local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "AutoFarm", Default = fa
 
     Options.MyToggle:SetValue(false)
 
+
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Collect Playtime Rewards", Default = false })
+
+Toggle:OnChanged(function(Value)
+_G.Rewards = Value
+if _G.Rewards then
+     while _G.Rewards do wait()
+          local args = {
+               [1] = 1
+           }
+           
+          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+          
+          local args = {
+               [1] = 2
+           }
+          
+          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+          
+          local args = {
+               [1] = 3
+           }
+           
+           game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+           
+          
+           local args = {
+               [1] = 4
+           }
+           
+           game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+           
+
+           local args = {
+               [1] = 5
+           }
+           
+           game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+           
+
+           local args = {
+               [1] = 6
+           }
+           
+           game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+          
+
+           local args = {
+               [1] = 7
+           }
+           
+           game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlayRewards"):FireServer(unpack(args))
+
+     end
+end
+end)
+
+Options.MyToggle:SetValue(false)
+
+
+
+
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "AntiAFK", Default = false })
 
     Toggle:OnChanged(function(Value)
@@ -312,5 +374,3 @@ end)
 
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = ImageButton
-
-
